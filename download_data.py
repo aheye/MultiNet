@@ -57,12 +57,12 @@ def get_pathes():
     """
 
     if 'TV_DIR_DATA' in os.environ:
-        data_dir = os.path.join(['hypes'], os.environ['TV_DIR_DATA'])
+        data_dir = os.path.join('hypes', os.environ['TV_DIR_DATA'])
     else:
         data_dir = "DATA"
 
     if 'TV_DIR_RUNS' in os.environ:
-        run_dir = os.path.join(['hypes'], os.environ['TV_DIR_DATA'])
+        run_dir = os.path.join('hypes', os.environ['TV_DIR_DATA'])
     else:
         run_dir = "RUNS"
 
@@ -131,15 +131,15 @@ def main():
         logging.info("Copied {} to {}.".format(filename, target_dir))
 
     # Checking whether the user provides the correct URL
-    if not kitti_data_url[13:33] == 'is.tue.mpg.de/kitti/':
-        logging.error("Wrong url.")
-        url = "http://www.cvlibs.net/download.php?file=data_road.zip"
-        logging.error("Please visit: {}".format(url))
-        logging.error("and request Kitti Download link.")
-        logging.error("You will receive an Email with the kitti download url")
-        logging.error("Rerun and enter the received [url] using"
-                      "'python download_data.py --kitti_url [url]'")
-        exit(1)
+    #if  not kitti_data_url[13:33] == 'is.tue.mpg.de/kitti/':
+    #    logging.error("Wrong url.")
+    #    url = "http://www.cvlibs.net/download.php?file=data_road.zip"
+    #    logging.error("Please visit: {}".format(url))
+    #    logging.error("and request Kitti Download link.")
+    #    logging.error("You will receive an Email with the kitti download url")
+    #    logging.error("Rerun and enter the received [url] using"
+    #                  "'python download_data.py --kitti_url [url]'")
+    #    exit(1)
 
     for zip_file, subdir in zip(kitti_download_files, data_sub_dirs):
         # Get name of downloaded zip file
